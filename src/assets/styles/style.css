@@ -1,0 +1,12 @@
+:root{
+    --back-color: #FB6B6B;
+    --primary-color: #D70900;
+    --primary-font: 'Recursive', sans-serif;
+    --logo-font: 'Righteous', cursive;
+}
+
+body {
+    background-color: var(--back-color);
+    font-family: var(--primary-font);
+}
+
