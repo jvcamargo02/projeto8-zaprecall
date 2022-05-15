@@ -1,6 +1,8 @@
 :root{
     --back-color: #FB6B6B;
     --primary-color: #D70900;
+    --box-color: #FFFFD4;
+    --zap-color: #2fbe34;
     --primary-font: 'Recursive', sans-serif;
     --logo-font: 'Righteous', cursive;
 }
@@ -10,3 +12,16 @@ body {
     font-family: var(--primary-font);
 }
 
+.logo-name {
+    color: white;
+    font-family: var(--logo-font);
+    margin-top: 13px; 
+    margin-bottom: 30px;
+    font-size: 36px;
+    line-height: 45px;
+    letter-spacing: -0.012;   
+}
+
+button{
+    cursor: pointer;
+}
