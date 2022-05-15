@@ -115,4 +115,24 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.icons {
+    margin-top: 7px;
+}
+
+[name~="checkmark-circle"] {
+    font-size: 23px;
+    color: var(--zap-color);
+}
+
+[name~="help-circle"] {
+    font-size: 23px;
+    color: orange;
+}
+
+[name~="close-circle"] {
+    font-size: 23px;
+    color: red
 }
