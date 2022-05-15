@@ -10,7 +10,7 @@ export default function App (){
 
     return(
         <>
-            {initScreen === "startScreen" ? <StartScreen setInitScreen={setInitScreen}/> : <QuizzScreen />}
+            {initScreen === "startScreen" ? <StartScreen setInitScreen={setInitScreen}/> : <QuizzScreen setInitScreen={setInitScreen}/>}
         </>
     )
 }

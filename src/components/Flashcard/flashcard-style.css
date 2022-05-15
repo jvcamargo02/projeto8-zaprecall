@@ -1,0 +1,83 @@
+.flashcard {
+    width: 300px;
+    min-height: 65px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    padding: 20px;
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.flashcard ion-icon {
+    font-size: 23px;
+    margin-left: auto;
+}
+
+.open{
+    min-height: 130px;
+    font-weight: 400;
+    background-color: var(--box-color);
+    padding-bottom: 6px;
+    align-items: initial;
+    cursor: default;
+}
+
+.open img {
+    height: 20px;
+    width: 30px;
+    margin-top: auto; margin-left: auto;
+    cursor: pointer;
+}
+
+.answer{
+    flex-direction: column;
+}
+
+.zap-btns{
+    margin-top: auto;
+    display: flex;
+    gap: 8px;
+}
+
+.zap-btns button {
+    width: 85px;
+    height: 37px;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    text-shadow: 1px 1px 1px black;
+}
+
+.wrong-btn{
+    background-color: red;
+}
+
+.middle-btn{
+    background-color: orange;
+}
+
+.right-btn{
+    background-color: var(--zap-color);
+}
+
+.zap {
+    color: var(--zap-color);
+    cursor: default;
+    text-decoration: line-through;
+}
+
+.middle {
+    color: orange;
+    cursor: default;
+    text-decoration: line-through;
+}
+
+.wrong {
+    color: red;
+    cursor: default;
+    text-decoration: line-through;
+}

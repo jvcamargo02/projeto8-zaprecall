@@ -5,7 +5,7 @@ import './style.css'
 
 
 
-export default function QuizzScreen() {
+export default function QuizzScreen({setInitScreen}) {
 
     const flashCards = [{
         question: 'O que é JSX?',
@@ -58,7 +58,7 @@ export default function QuizzScreen() {
         <div className="quizz-screen">
             <Header />
             {flashCards.map((flashCard, index) => <FlashCard key={index} index={index} visible={flashCard.isVisible} question={flashCard.question} answer={flashCard.answer} footerNum={answered} refreshFooter={setAnswered} footerIcons={footerIcons} setFooterIcons={setFooterIcons} />)}
-            <Footer numQuestions={flashCards.length} answered={answered} footerIcons={footerIcons}/>
+            <Footer numQuestions={flashCards.length} answered={answered} footerIcons={footerIcons} setInitScreen={setInitScreen}/>
         </div>
     )
 }

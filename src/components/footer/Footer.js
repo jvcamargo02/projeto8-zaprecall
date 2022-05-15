@@ -1,5 +1,6 @@
-export default function Footer({ numQuestions, answered, footerIcons }) {
-    console.log(footerIcons)
+import './footer-style.css'
+
+export default function Footer({ numQuestions, answered, footerIcons, setInitScreen }) {
 
     if(footerIcons.length === 0) {
         return(
@@ -14,8 +15,9 @@ export default function Footer({ numQuestions, answered, footerIcons }) {
                 <p className='footer-text'>Ainda faltam alguns... Mas não desanime!</p>
                 <p>{answered}/{numQuestions} CONCLUÍDOS</p>
                 <div className='icons'>
-                    {footerIcons.map((footerIcon) => <ion-icon name={footerIcon}></ion-icon>)}
+                    {footerIcons.map((footerIcon, index) => <ion-icon key={index} name={footerIcon}></ion-icon>)}
                 </div>
+                <button onClick={() => setInitScreen("startScreen")}>Reiniciar Recall</button>
             </footer>
         )
     } else if (numQuestions === answered) {
@@ -25,15 +27,16 @@ export default function Footer({ numQuestions, answered, footerIcons }) {
                 <p className='footer-text'>Você não esqueceu de nenhum flashcard!</p>
                 <p>{answered}/{numQuestions} CONCLUÍDOS</p>
                 <div className='icons'>
-                    {footerIcons.map((footerIcon) => <ion-icon name={footerIcon}></ion-icon>)}
+                    {footerIcons.map((footerIcon, index) => <ion-icon key={index} name={footerIcon}></ion-icon>)}
                 </div>
+                <button onClick={() => setInitScreen("startScreen")}>Reiniciar Recall</button>
             </footer>
     )} else {
         return(
             <footer>
                 <p>{answered}/{numQuestions} CONCLUÍDOS</p>
                 <div className='icons'>
-                    {footerIcons.map((footerIcon) => <ion-icon name={footerIcon}></ion-icon>)}
+                    {footerIcons.map((footerIcon, index) => <ion-icon key={index} name={footerIcon}></ion-icon>)}
                 </div>
             </footer>
         )

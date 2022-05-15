@@ -1,4 +1,5 @@
 import React from 'react'
+import './flashcard-style.css'
 import revertImg from '../../assets/images/Vector.png'
 
 export default function FlashCard({ index, visible, question, answer, footerNum, refreshFooter, footerIcons, setFooterIcons }) {

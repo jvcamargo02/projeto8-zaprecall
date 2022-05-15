@@ -1,0 +1,36 @@
+footer{
+    width: 100%;
+    min-height: 70px;
+    position: fixed;
+    bottom: 0; left: 0;
+    background-color: white;
+    font-size: 18px;
+    box-shadow: 0px -4px 6px 0px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-title{
+    font-weight: 700;
+    margin-top: 15px; margin-bottom: 15px;
+}
+
+.footer-text{
+    max-width: 220px;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+footer button {
+    width: 170px;
+    height: 32px;
+    background-color: var(--back-color);
+    color: white;
+    font-size: 14px;
+    margin-top: 25px; margin-bottom: 25px;
+    border: none;
+    border-radius: 5px;
+
+}
