@@ -29,6 +29,8 @@
     height: 20px;
     width: 30px;
     margin-top: auto; margin-left: auto;
+    padding: 40px 0px 0px 40px;
+    box-sizing: initial;
     cursor: pointer;
 }
 
@@ -38,6 +40,7 @@
 
 .zap-btns{
     margin-top: auto;
+    margin-left: auto; margin-right: auto;
     display: flex;
     gap: 8px;
 }
@@ -80,4 +83,17 @@
     color: red;
     cursor: default;
     text-decoration: line-through;
+}
+
+@media (min-width: 700px) {
+
+    .flashcard{
+        width: 560px;
+        font-size: 20px;
+    }
+
+    .flashcard ion-icon {
+        font-size: 28px;
+    }
+    
 }

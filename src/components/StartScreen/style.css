@@ -23,3 +23,10 @@
     border-radius: 5px;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.15);
 }
+
+@media (min-width: 700px) {
+
+    .init-screen button {
+        margin-top: 30px;
+    }
+}

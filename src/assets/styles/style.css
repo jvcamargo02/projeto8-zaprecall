@@ -25,3 +25,10 @@ body {
 button{
     cursor: pointer;
 }
+
+@media (min-width: 700px) {
+
+    .logo-name {
+        font-size: 64px;
+    }
+}
