@@ -64,6 +64,7 @@ export default function App (){
 
     function shuffle() {
         deck2.sort(comparador)
+        deck1.sort(comparador)
     }
 
     function comparador() {
@@ -75,7 +76,7 @@ export default function App (){
 
     return(
         <>
-            {initScreen === "startScreen" ? <StartScreen setInitScreen={setInitScreen} setIsChoicenDeck={setIsChoicenDeck} isChoicenDeck={isChoicenDeck} setGoals={setGoals} deck1={deck1} deck2={deck2}/> : <QuizzScreen setInitScreen={setInitScreen} goals={goals} flashCards={isChoicenDeck === 'react' ? deck1 : deck2}/>}
+            {initScreen === "startScreen" ? <StartScreen setInitScreen={setInitScreen} setIsChoicenDeck={setIsChoicenDeck} isChoicenDeck={isChoicenDeck} setGoals={setGoals} deck1={deck1} deck2={deck2}/> : <QuizzScreen setInitScreen={setInitScreen} goals={goals} flashCards={isChoicenDeck === 'react' ? deck1 : deck2} setIsChoicenDeck={setIsChoicenDeck}/>}
         </>
     )
 }

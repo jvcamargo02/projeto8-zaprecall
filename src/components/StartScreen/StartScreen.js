@@ -1,5 +1,5 @@
 import React from "react"
-import './style.css'
+import './start-screen-style.css'
 
 
 export default function StartScreen ({setInitScreen, setIsChoicenDeck, isChoicenDeck, setGoals, deck1, deck2}){

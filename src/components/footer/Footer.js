@@ -1,8 +1,11 @@
 import './footer-style.css'
 
-export default function Footer({ numQuestions, answered, footerIcons, setInitScreen, goals, zap }) {
+export default function Footer({ numQuestions, answered, footerIcons, setInitScreen, goals, zap,  setIsChoicenDeck }) {
 
-    console.log(goals)
+    function reset () {
+        setInitScreen("startScreen")
+        setIsChoicenDeck(false)
+    }
 
     if(footerIcons.length === 0) {
         return(
@@ -10,7 +13,7 @@ export default function Footer({ numQuestions, answered, footerIcons, setInitScr
                 <p>{answered}/{numQuestions} CONCLUÍDOS</p>
             </footer> 
         )
-    } else if (numQuestions === answered && goals !==zap) {
+    } else if (numQuestions === answered &&  zap < goals) {
         return (
             <footer>
                 <p className='footer-title'>😢 Putz...</p>
@@ -19,10 +22,10 @@ export default function Footer({ numQuestions, answered, footerIcons, setInitScr
                 <div className='icons'>
                     {footerIcons.map((footerIcon, index) => <ion-icon key={index} name={footerIcon}></ion-icon>)}
                 </div>
-                <button onClick={() => setInitScreen("startScreen")}>Reiniciar Recall</button>
+                <button onClick={reset}>Reiniciar Recall</button>
             </footer>
         )
-    } else if (numQuestions === answered && goals === zap) {
+    } else if (numQuestions === answered &&  zap >= goals) {
         return(
             <footer>
                 <p className='footer-title'>🥳 Parabéns!</p>
@@ -31,7 +34,7 @@ export default function Footer({ numQuestions, answered, footerIcons, setInitScr
                 <div className='icons'>
                     {footerIcons.map((footerIcon, index) => <ion-icon key={index} name={footerIcon}></ion-icon>)}
                 </div>
-                <button onClick={() => setInitScreen("startScreen")}>Reiniciar Recall</button>
+                <button onClick={reset}>Reiniciar Recall</button>
             </footer>
     )} else {
         return(

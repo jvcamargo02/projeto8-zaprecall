@@ -18,7 +18,6 @@ export default function FlashCard({ index, visible, question, answer, footerNum,
             const footer = [...footerIcons, 'checkmark-circle']
             setFooterIcons(footer)
             setZap(zap+1) 
-            console.log(zap)
         } else if (props === 'middle') {
             setStatus('flashcard middle')
             setIonicon('help-circle')
