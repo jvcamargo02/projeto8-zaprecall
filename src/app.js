@@ -6,6 +6,10 @@ import StartScreen from "./components/StartScreen/StartScreen"
 
 export default function App (){
 
+    const [initScreen, setInitScreen] = React.useState("startScreen")
+    const [isChoicenDeck, setIsChoicenDeck] = React.useState(false)
+    const [goals, setGoals] = React.useState(0)
+    
     const deck1 = [{
         question: 'O que é JSX?',
         answer: 'Uma extensão de linguagem do JavaScript',
@@ -67,9 +71,7 @@ export default function App (){
     }
     shuffle()
 
-    const [initScreen, setInitScreen] = React.useState("startScreen")
-    const [isChoicenDeck, setIsChoicenDeck] = React.useState(false)
-    const [goals, setGoals] = React.useState(0)
+    
 
     return(
         <>
