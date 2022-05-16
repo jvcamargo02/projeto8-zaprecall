@@ -2,7 +2,7 @@ import React from 'react'
 import './flashcard-style.css'
 import revertImg from '../../assets/images/Vector.png'
 
-export default function FlashCard({ index, visible, question, answer, footerNum, refreshFooter, footerIcons, setFooterIcons }) {
+export default function FlashCard({ index, visible, question, answer, footerNum, refreshFooter, footerIcons, setFooterIcons, setZap, zap }) {
 
     const [isVisible, setIsVisible] = React.useState(visible)
     const [status, setStatus] = React.useState('flashcard')
@@ -17,6 +17,8 @@ export default function FlashCard({ index, visible, question, answer, footerNum,
             setIonicon('checkmark-circle')
             const footer = [...footerIcons, 'checkmark-circle']
             setFooterIcons(footer)
+            setZap(zap+1) 
+            console.log(zap)
         } else if (props === 'middle') {
             setStatus('flashcard middle')
             setIonicon('help-circle')

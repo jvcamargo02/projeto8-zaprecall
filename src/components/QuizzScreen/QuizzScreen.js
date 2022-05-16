@@ -5,60 +5,17 @@ import './style.css'
 
 
 
-export default function QuizzScreen({setInitScreen}) {
-
-    const flashCards = [{
-        question: 'O que é JSX?',
-        answer: 'Uma extensão de linguagem do JavaScript',
-        isVisible: false
-    }, {
-        question: 'O React é __',
-        answer: 'uma biblioteca JavaScript para construção de interfaces',
-        isVisible: false
-    }, {
-        question: 'Componentes devem iniciar com __',
-        answer: 'letra maiúscula',
-        isVisible: false
-    }, {
-        question: 'Podemos colocar __ dentro do JSX',
-        answer: 'expressões',
-        isVisible: false
-    }, {
-        question: 'O ReactDOM nos ajuda __ ',
-        answer: 'interagindo com a DOM para colocar componentes React na mesma',
-        isVisible: false
-    }, {
-        question: 'Usamos o npm para __',
-        answer: 'gerenciar os pacotes necessários e suas dependências',
-        isVisible: false
-    }, {
-        question: 'Usamos props para __ ',
-        answer: 'passar diferentes informações para componentes ',
-        isVisible: false
-    }, {
-        question: 'Usamos estado (state) para __',
-        answer: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente',
-        isVisible: false
-    }]
-
-    function shuffle() {
-        flashCards.sort(comparador)
-
-    }
-
-    function comparador() {
-        return Math.random() - 0.5;
-    }
+export default function QuizzScreen({setInitScreen, goals, flashCards}) {
 
     const [answered, setAnswered] = React.useState(0)
     const [footerIcons, setFooterIcons] = React.useState([])
-    shuffle()
+    const [zap, setZap] = React.useState(1)
 
     return (
         <div className="quizz-screen">
             <Header />
-            {flashCards.map((flashCard, index) => <FlashCard key={index} index={index} visible={flashCard.isVisible} question={flashCard.question} answer={flashCard.answer} footerNum={answered} refreshFooter={setAnswered} footerIcons={footerIcons} setFooterIcons={setFooterIcons} />)}
-            <Footer numQuestions={flashCards.length} answered={answered} footerIcons={footerIcons} setInitScreen={setInitScreen}/>
+            {flashCards.map((flashCard, index) => <FlashCard key={index} index={index} visible={flashCard.isVisible} question={flashCard.question} answer={flashCard.answer} footerNum={answered} refreshFooter={setAnswered} footerIcons={footerIcons} setFooterIcons={setFooterIcons} setZap={setZap} zap={zap} />)}
+            <Footer numQuestions={flashCards.length} answered={answered} footerIcons={footerIcons} setInitScreen={setInitScreen} goals={goals} zap={zap}/>
         </div>
     )
 }

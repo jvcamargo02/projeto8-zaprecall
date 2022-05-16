@@ -1,6 +1,8 @@
 import './footer-style.css'
 
-export default function Footer({ numQuestions, answered, footerIcons, setInitScreen }) {
+export default function Footer({ numQuestions, answered, footerIcons, setInitScreen, goals, zap }) {
+
+    console.log(goals)
 
     if(footerIcons.length === 0) {
         return(
@@ -8,7 +10,7 @@ export default function Footer({ numQuestions, answered, footerIcons, setInitScr
                 <p>{answered}/{numQuestions} CONCLUÍDOS</p>
             </footer> 
         )
-    } else if (numQuestions === answered && footerIcons.includes("close-circle")) {
+    } else if (numQuestions === answered && goals !==zap) {
         return (
             <footer>
                 <p className='footer-title'>😢 Putz...</p>
@@ -20,7 +22,7 @@ export default function Footer({ numQuestions, answered, footerIcons, setInitScr
                 <button onClick={() => setInitScreen("startScreen")}>Reiniciar Recall</button>
             </footer>
         )
-    } else if (numQuestions === answered) {
+    } else if (numQuestions === answered && goals === zap) {
         return(
             <footer>
                 <p className='footer-title'>🥳 Parabéns!</p>

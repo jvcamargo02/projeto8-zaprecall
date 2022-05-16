@@ -3,6 +3,8 @@
     --primary-color: #D70900;
     --box-color: #FFFFD4;
     --zap-color: #2fbe34;
+    --disabled-color: #E8E8E8;
+    --gray-color: #C0C0C0;
     --primary-font: 'Recursive', sans-serif;
     --logo-font: 'Righteous', cursive;
 }
